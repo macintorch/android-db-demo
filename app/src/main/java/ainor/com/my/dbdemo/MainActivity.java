@@ -17,11 +17,15 @@ public class MainActivity extends AppCompatActivity {
             //create database
             SQLiteDatabase myDatabase = this.openOrCreateDatabase("Users",MODE_PRIVATE, null);
 
-            myDatabase.execSQL("CREATE TABLE IF NOT EXISTS users (name VARCHAR, age INT(3))");
+            //myDatabase.execSQL("CREATE TABLE IF NOT EXISTS users (name VARCHAR, age INT(3))");
 
-            myDatabase.execSQL("INSERT INTO users (name, age) VALUES ('Ainor', 34)");
+            //myDatabase.execSQL("INSERT INTO users (name, age) VALUES ('Affan', 4)");
 
-            myDatabase.execSQL("INSERT INTO users (name, age) VALUES ('Asad', 5)");
+            //myDatabase.execSQL("INSERT INTO users (name, age) VALUES ('Azka', 1)");
+
+            //myDatabase.execSQL("DELETE FROM users WHERE name = 'Ainor'");
+
+            myDatabase.execSQL("UPDATE users SET age = 6 WHERE name = 'Asad'");
 
             Cursor c = myDatabase.rawQuery("SELECT * FROM users", null);
 
